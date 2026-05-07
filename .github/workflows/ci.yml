@@ -19,11 +19,11 @@ jobs:
 
       - name: Compile
         run: |
-          g++ -std=c++17 -Wall -Wextra -Iinclude \
-            src/User.cpp \
-            src/Course.cpp \
-            src/Cart.cpp \
-            src/Wishlist.cpp \
-            src/Utils.cpp \
-            src/main.cpp \
+          g++ -std=c++17 -Wall -Wextra \
+            User.cpp \
+            Course.cpp \
+            Cart.cpp \
+            Wishlist.cpp \
+            Utils.cpp \
+            main.cpp \
             -o online_learning_system
