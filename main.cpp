@@ -1,5 +1,7 @@
-// Entry point. Manages the main menu, student menu, and instructor menu.
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Entry point. Manages the main menu, student menu, and instructor menu.
+*/ 
 #include <iostream>
 #include "User.h"
 #include "Course.h"
