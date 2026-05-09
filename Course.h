@@ -20,9 +20,9 @@ struct Course {
     std::string instructorName;
 };
 
-std::vector<Course>& getCourseList();
-void displayCourseList(bool subscriberMode);
-void displayCourseDetail(const Course& course, bool subscriberMode);
-void addCourse(const Course& course);
+std::vector<Course>& GetCourseList();
+void DisplayCourseList(bool subscriberMode);
+void DisplayCourseDetail(const Course& course, bool subscriberMode);
+void AddCourse(const Course& course);
 
 #endif
