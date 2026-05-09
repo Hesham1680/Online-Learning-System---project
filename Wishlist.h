@@ -1,4 +1,7 @@
-// Declares wishlist functions for saving and retrieving courses.
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Declares wishlist functions for saving and retrieving courses.
+*/
 
 #ifndef WISHLIST_H
 #define WISHLIST_H
