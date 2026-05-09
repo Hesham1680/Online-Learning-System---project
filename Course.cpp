@@ -1,5 +1,7 @@
-// Implements course listing, course detail display, and course creation.
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Implements course listing, course detail display, and course creation.
+*/
 #include "Course.h"
 #include "Utils.h"
 #include <iostream>
