@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/*  Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Defines the Course struct and declares course-related functions.
 */
 #ifndef COURSE_H
