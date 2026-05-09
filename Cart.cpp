@@ -1,5 +1,7 @@
-// Implements user signup, login, and session management
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Implements cart operations: add, remove, total calculation, and checkout.
+*/
 #include "Cart.h"
 #include "Utils.h"
 #include <iostream>
