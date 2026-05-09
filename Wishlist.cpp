@@ -1,5 +1,7 @@
-// Implements wishlist operations: add, remove, and display.
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Implements wishlist operations: add, remove, and display.
+*/
 #include "Wishlist.h"
 #include "Utils.h"
 #include <iostream>
