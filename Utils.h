@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Declares shared utility functions for input validation and display.
 */ 
 
@@ -8,9 +7,9 @@
 
 #include <string>
 
-int getValidInt(int min, int max);
-std::string getValidString(const std::string& prompt);
-void printDivider();
-void printHeader(const std::string& title);
+int GetValidInt(int min, int max);
+std::string GetValidString(const std::string& prompt);
+void PrintDivider();
+void PrintHeader(const std::string& title);
 
 #endif
