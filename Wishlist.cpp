@@ -1,3 +1,5 @@
+// Implements wishlist operations: add, remove, and display.
+
 #include "Wishlist.h"
 #include "Utils.h"
 #include <iostream>
