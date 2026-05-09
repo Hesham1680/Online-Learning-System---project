@@ -1,4 +1,7 @@
-// Declares shared utility functions for input validation and display.
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Declares shared utility functions for input validation and display.
+*/ 
 
 #ifndef UTILS_H
 #define UTILS_H
