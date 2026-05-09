@@ -1,5 +1,6 @@
-/* * Copyright 2026 Cairo University - SCS253 - Online Learning System
-   * Implements user signup, login, and session management. */ 
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
+   * Implements user signup, login, and session management. 
+   */ 
 
 #include "User.h"
 #include "Utils.h"
