@@ -1,3 +1,5 @@
+// Declares shared utility functions for input validation and display.
+
 #ifndef UTILS_H
 #define UTILS_H
 
