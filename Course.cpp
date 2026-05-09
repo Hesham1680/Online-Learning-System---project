@@ -1,13 +1,12 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
-* Implements course listing, course detail display, and course creation.
-*/
+/* * Copyright 2026 Cairo University - SCS253 - Online Learning System
+   * Implements course listing, course detail display, and course creation. */
+
 #include "Course.h"
 #include "Utils.h"
 #include <iostream>
 #include <iomanip>
 
-std::vector<Course>& getCourseList() {
+std::vector<Course>& GetCourseList() {
     static std::vector<Course> courses = {
         {1, "C++ Programming", "Learn C++ from scratch.", "Programming", 49.99, 20, true, "Beginner", "Dr. Ahmed"},
         {2, "Data Structures", "Arrays, linked lists, trees.", "Programming", 59.99, 30, true, "Intermediate", "Dr. Sara"},
@@ -18,16 +17,16 @@ std::vector<Course>& getCourseList() {
     return courses;
 }
 
-void displayCourseList(bool subscriberMode) {
-    std::vector<Course>& courses = getCourseList();
-    printHeader("Available Courses");
+void DisplayCourseList(bool subscriberMode) {
+    std::vector<Course>& courses = GetCourseList();
+    PrintHeader("Available Courses");
     std::cout << std::left
               << std::setw(4)  << "ID"
               << std::setw(25) << "Name"
               << std::setw(15) << "Difficulty"
               << std::setw(8)  << "Hours"
               << "Price\n";
-    printDivider();
+    PrintDivider();
     for (const Course& c : courses) {
         std::cout << std::left
                   << std::setw(4)  << c.id
@@ -42,8 +41,8 @@ void displayCourseList(bool subscriberMode) {
     }
 }
 
-void displayCourseDetail(const Course& course, bool subscriberMode) {
-    printHeader(course.name);
+void DisplayCourseDetail(const Course& course, bool subscriberMode) {
+    PrintHeader(course.name);
     std::cout << "Description : " << course.description << "\n";
     std::cout << "Category    : " << course.category << "\n";
     std::cout << "Instructor  : " << course.instructorName << "\n";
@@ -57,6 +56,6 @@ void displayCourseDetail(const Course& course, bool subscriberMode) {
     }
 }
 
-void addCourse(const Course& course) {
-    getCourseList().push_back(course);
+void AddCourse(const Course& course) {
+    GetCourseList().push_back(course);
 }
