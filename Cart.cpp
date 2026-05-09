@@ -90,6 +90,6 @@ void Checkout(Cart& cart, User& user) {
             user.purchasedCourses.push_back(c);
         }
     }
-    cart.clear();
+    cart.Clear();
     std::cout << "Purchase successful! Courses added to My Courses.\n";
 }
