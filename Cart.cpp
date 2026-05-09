@@ -1,3 +1,5 @@
+// Implements user signup, login, and session management
+
 #include "Cart.h"
 #include "Utils.h"
 #include <iostream>
