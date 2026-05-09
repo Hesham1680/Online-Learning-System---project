@@ -1,3 +1,5 @@
+// Declares wishlist functions for saving and retrieving courses.
+
 #ifndef WISHLIST_H
 #define WISHLIST_H
 
