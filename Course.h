@@ -1,5 +1,7 @@
-// Defines the Course struct and declares course-related functions.
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Defines the Course struct and declares course-related functions.
+*/
 #ifndef COURSE_H
 #define COURSE_H
 
