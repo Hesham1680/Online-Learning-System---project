@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Declares wishlist functions for saving and retrieving courses.
 */
 
@@ -9,9 +8,9 @@
 #include "User.h"
 #include "Course.h"
 
-void addToWishlist(User& user, const Course& course);
-void removeFromWishlist(User& user, int courseId);
-void displayWishlist(const User& user);
-bool isInWishlist(const User& user, int courseId);
+void AddToWishlist(User& user, const Course& course);
+void RemoveFromWishlist(User& user, int courseId);
+void DisplayWishlist(const User& user);
+bool IsInWishlist(const User& user, int courseId);
 
 #endif
