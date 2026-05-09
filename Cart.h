@@ -1,5 +1,7 @@
-// Defines the Cart struct and declares checkout function.
-
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Defines the Cart struct and declares checkout function.
+*/
 #ifndef CART_H
 #define CART_H
 
