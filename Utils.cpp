@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Implements input validation and console display helper functions.
 */ 
 
