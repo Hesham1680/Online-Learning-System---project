@@ -12,15 +12,15 @@
 struct Cart {
     std::vector<Course> items;
 
-    void addItem(const Course& course);
-    void removeItem(int courseId);
-    double getTotal() const;
-    void display() const;
-    bool isEmpty() const;
-    void clear();
-    bool contains(int courseId) const;
+    void AddItem(const Course& course);
+    void RemoveItem(int courseId);
+    double GetTotal() const;
+    void Display() const;
+    bool IsEmpty() const;
+    void Clear();
+    bool Contains(int courseId) const;
 };
 
-void checkout(Cart& cart, User& user);
+void Checkout(Cart& cart, User& user);
 
 #endif
