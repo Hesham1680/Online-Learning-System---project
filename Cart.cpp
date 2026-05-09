@@ -1,15 +1,14 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
-* Implements cart operations: add, remove, total calculation, and checkout.
-*/
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
+ * Implements cart operations: add, remove, total calculation, and checkout. */
+
 #include "Cart.h"
 #include "Utils.h"
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
 
-void Cart::addItem(const Course& course) {
-    if (contains(course.id)) {
+void Cart::AddItem(const Course& course) {
+    if (Contains(course.id)) {
         std::cout << "\"" << course.name << "\" is already in your cart.\n";
         return;
     }
@@ -17,7 +16,7 @@ void Cart::addItem(const Course& course) {
     std::cout << "\"" << course.name << "\" added to cart.\n";
 }
 
-void Cart::removeItem(int courseId) {
+void Cart::RemoveItem(int courseId) {
     auto it = std::remove_if(items.begin(), items.end(),
         [courseId](const Course& c) { return c.id == courseId; });
     if (it != items.end()) {
@@ -28,7 +27,7 @@ void Cart::removeItem(int courseId) {
     }
 }
 
-double Cart::getTotal() const {
+double Cart::GetTotal() const {
     double total = 0.0;
     for (const Course& c : items) {
         total += c.price;
@@ -36,8 +35,8 @@ double Cart::getTotal() const {
     return total;
 }
 
-void Cart::display() const {
-    printHeader("Your Cart");
+void Cart::Display() const {
+    PrintHeader("Your Cart");
     if (items.empty()) {
         std::cout << "Your cart is empty.\n";
         return;
@@ -46,19 +45,19 @@ void Cart::display() const {
         std::cout << "- " << c.name
                   << " ($" << std::fixed << std::setprecision(2) << c.price << ")\n";
     }
-    printDivider();
-    std::cout << "Total: $" << std::fixed << std::setprecision(2) << getTotal() << "\n";
+    PrintDivider();
+    std::cout << "Total: $" << std::fixed << std::setprecision(2) << GetTotal() << "\n";
 }
 
-bool Cart::isEmpty() const {
+bool Cart::IsEmpty() const {
     return items.empty();
 }
 
-void Cart::clear() {
+void Cart::Clear() {
     items.clear();
 }
 
-bool Cart::contains(int courseId) const {
+bool Cart::Contains(int courseId) const {
     for (const Course& c : items) {
         if (c.id == courseId) {
             return true;
@@ -67,14 +66,14 @@ bool Cart::contains(int courseId) const {
     return false;
 }
 
-void checkout(Cart& cart, User& user) {
-    if (cart.isEmpty()) {
+void Checkout(Cart& cart, User& user) {
+    if (cart.IsEmpty()) {
         std::cout << "Your cart is empty. Nothing to purchase.\n";
         return;
     }
-    cart.display();
+    cart.Display();
     std::cout << "\nConfirm purchase? (1 = Yes, 0 = No): ";
-    int confirm = getValidInt(0, 1);
+    int confirm = GetValidInt(0, 1);
     if (confirm == 0) {
         std::cout << "Purchase cancelled.\n";
         return;
