@@ -1,4 +1,4 @@
-// User.h - Defines the User struct and declares signup/login functions.
+// Defines the User struct and declares signup/login functions.
 
 
 #ifndef CART_H
