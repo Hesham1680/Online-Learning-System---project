@@ -60,22 +60,6 @@ online-learning-system/
 
 ---
 
-## How to Compile and Run
-
-**Linux / macOS**
-```bash
-g++ -std=c++17 -Wall -Wextra -I. User.cpp Course.cpp Cart.cpp Wishlist.cpp Utils.cpp main.cpp -o app
-./app
-```
-
-**Windows (MinGW)**
-```bash
-g++ -std=c++17 -Wall -Wextra -I. User.cpp Course.cpp Cart.cpp Wishlist.cpp Utils.cpp main.cpp -o app.exe
-app.exe
-```
-
----
-
 ## Development Process
 
 This project followed the Scrum framework across 3 one-week sprints.
@@ -86,8 +70,6 @@ This project followed the Scrum framework across 3 one-week sprints.
 | Sprint 2 | Cart, purchase, and My Courses | US-05, US-06, US-07 |
 | Sprint 3 | Wishlist, instructor features, SonarQube | US-08, US-09 |
 
-See `LIFECYCLE.md` for the full justification of why Scrum was chosen for this project.
-
 ---
 
 ## CI/CD
@@ -95,3 +77,13 @@ See `LIFECYCLE.md` for the full justification of why Scrum was chosen for this p
 GitHub Actions runs on every push to main. The workflow installs g++ on Ubuntu and compiles the full codebase. A passing build confirms zero compilation errors.
 
 ---
+
+## Code Quality
+ 
+SonarQube static analysis was run on the full codebase in Sprint 3.
+ 
+- Critical issues: 0
+- Blocker issues: 0
+- Maintainability rating: A
+- Duplications: 0.0%
+
