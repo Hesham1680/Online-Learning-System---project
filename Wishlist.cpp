@@ -1,13 +1,13 @@
 /* Copyright 2026 Cairo University - SCS253 - Online Learning System
-* Implements wishlist operations: add, remove, and display.
-*/
+* Implements wishlist operations: add, remove, and display. */
+
 #include "Wishlist.h"
 #include "Utils.h"
 #include <iostream>
 #include <algorithm>
 
-void addToWishlist(User& user, const Course& course) {
-    if (isInWishlist(user, course.id)) {
+void AddToWishlist(User& user, const Course& course) {
+    if (IsInWishlist(user, course.id)) {
         std::cout << "\"" << course.name << "\" is already in your wishlist.\n";
         return;
     }
@@ -15,7 +15,7 @@ void addToWishlist(User& user, const Course& course) {
     std::cout << "\"" << course.name << "\" added to wishlist.\n";
 }
 
-void removeFromWishlist(User& user, int courseId) {
+void RemoveFromWishlist(User& user, int courseId) {
     auto it = std::remove_if(user.wishlist.begin(), user.wishlist.end(),
         [courseId](const Course& c) { return c.id == courseId; });
     if (it != user.wishlist.end()) {
@@ -26,8 +26,8 @@ void removeFromWishlist(User& user, int courseId) {
     }
 }
 
-void displayWishlist(const User& user) {
-    printHeader("My Wishlist");
+void DisplayWishlist(const User& user) {
+    PrintHeader("My Wishlist");
     if (user.wishlist.empty()) {
         std::cout << "Your wishlist is empty.\n";
         return;
@@ -38,7 +38,7 @@ void displayWishlist(const User& user) {
     }
 }
 
-bool isInWishlist(const User& user, int courseId) {
+bool IsInWishlist(const User& user, int courseId) {
     for (const Course& c : user.wishlist) {
         if (c.id == courseId) {
             return true;
