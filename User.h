@@ -1,4 +1,7 @@
-//Defines the User struct and declares signup/login functions. 
+/* 
+* Copyright 2026 Cairo University - SCS253 - Online Learning System
+* Defines the User struct and declares signup/login functions.
+*/ 
 
 #ifndef USER_H
 #define USER_H
