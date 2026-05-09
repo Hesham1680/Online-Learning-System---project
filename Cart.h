@@ -1,5 +1,4 @@
-// Defines the User struct and declares signup/login functions.
-
+// Defines the Cart struct and declares checkout function.
 
 #ifndef CART_H
 #define CART_H
