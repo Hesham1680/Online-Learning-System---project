@@ -7,7 +7,7 @@
 #include <iostream>
 #include <limits>
 
-int getValidInt(int min, int max) {
+int GetValidInt(int min, int max) {
     int value = 0;
     while (true) {
         std::cin >> value;
@@ -23,7 +23,7 @@ int getValidInt(int min, int max) {
     }
 }
 
-std::string getValidString(const std::string& prompt) {
+std::string GetValidString(const std::string& prompt) {
     std::string value;
     while (true) {
         std::cout << prompt;
@@ -35,12 +35,12 @@ std::string getValidString(const std::string& prompt) {
     }
 }
 
-void printDivider() {
+void PrintDivider() {
     std::cout << "----------------------------------------\n";
 }
 
-void printHeader(const std::string& title) {
-    printDivider();
+void PrintHeader(const std::string& title) {
+    PrintDivider();
     std::cout << "  " << title << "\n";
-    printDivider();
+    PrintDivider();
 }
