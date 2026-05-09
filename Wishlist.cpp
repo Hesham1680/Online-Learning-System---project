@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/* Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Implements wishlist operations: add, remove, and display.
 */
 #include "Wishlist.h"
