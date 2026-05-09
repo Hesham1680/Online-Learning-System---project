@@ -1,5 +1,4 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
+/*  Copyright 2026 Cairo University - SCS253 - Online Learning System
 * Defines the User struct and declares signup/login functions.
 */ 
 
@@ -23,8 +22,8 @@ struct User {
     std::vector<Course> wishlist;
 };
 
-std::vector<User>& getUserList();
-bool signUp();
-User* login();
+std::vector<User>& GetUserList();
+bool SignUp();
+User* Login();
 
 #endif
