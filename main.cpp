@@ -1,7 +1,6 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
-* Entry point. Manages the main menu, student menu, and instructor menu.
-*/ 
+/* * Copyright 2026 Cairo University - SCS253 - Online Learning System
+   * Entry point. Manages the main menu, student menu, and instructor menu. */ 
+
 #include <iostream>
 #include "User.h"
 #include "Course.h"
@@ -9,14 +8,14 @@
 #include "Wishlist.h"
 #include "Utils.h"
 
-void studentMenu(User& user, Cart& cart);
-void instructorMenu(User& user);
-void browseCoursesMenu(User& user, Cart& cart);
-void myCourses(const User& user);
-void instructorAddCourse(User& user);
+void StudentMenu(User& user, Cart& cart);
+void InstructorMenu(User& user);
+void BrowseCoursesMenu(User& user, Cart& cart);
+void MyCourses(const User& user);
+void InstructorAddCourse(User& user);
 
 int main() {
-    printHeader("Online Learning System");
+    PrintHeader("Online Learning System");
 
     bool running = true;
     while (running) {
@@ -24,18 +23,18 @@ int main() {
         std::cout << "2. Login\n";
         std::cout << "0. Exit\n";
         std::cout << "Choice: ";
-        int choice = getValidInt(0, 2);
+        int choice = GetValidInt(0, 2);
 
         if (choice == 1) {
-            signUp();
+            SignUp();
         } else if (choice == 2) {
-            User* user = login();
+            User* user = Login();
             if (user != nullptr) {
                 Cart cart;
                 if (user->role == UserRole::STUDENT) {
-                    studentMenu(*user, cart);
+                    StudentMenu(*user, cart);
                 } else {
-                    instructorMenu(*user);
+                    InstructorMenu(*user);
                 }
             }
         } else {
@@ -47,10 +46,10 @@ int main() {
     return 0;
 }
 
-void studentMenu(User& user, Cart& cart) {
+void StudentMenu(User& user, Cart& cart) {
     bool loggedIn = true;
     while (loggedIn) {
-        printHeader("Student Menu - " + user.username);
+        PrintHeader("Student Menu - " + user.username);
         std::cout << "1. Browse Courses\n";
         std::cout << "2. View Cart\n";
         std::cout << "3. Checkout\n";
@@ -58,23 +57,23 @@ void studentMenu(User& user, Cart& cart) {
         std::cout << "5. My Wishlist\n";
         std::cout << "0. Logout\n";
         std::cout << "Choice: ";
-        int choice = getValidInt(0, 5);
+        int choice = GetValidInt(0, 5);
 
         if (choice == 1) {
-            browseCoursesMenu(user, cart);
+            BrowseCoursesMenu(user, cart);
         } else if (choice == 2) {
-            cart.display();
+            cart.Display();
         } else if (choice == 3) {
-            checkout(cart, user);
+            Checkout(cart, user);
         } else if (choice == 4) {
-            myCourses(user);
+            MyCourses(user);
         } else if (choice == 5) {
-            displayWishlist(user);
+            DisplayWishlist(user);
             if (!user.wishlist.empty()) {
                 std::cout << "\nRemove a course from wishlist? Enter course ID (0 to skip): ";
-                int id = getValidInt(0, 9999);
+                int id = GetValidInt(0, 9999);
                 if (id != 0) {
-                    removeFromWishlist(user, id);
+                    RemoveFromWishlist(user, id);
                 }
             }
         } else {
@@ -83,12 +82,12 @@ void studentMenu(User& user, Cart& cart) {
     }
 }
 
-void browseCoursesMenu(User& user, Cart& cart) {
-    displayCourseList(false);
-    std::vector<Course>& courses = getCourseList();
+void BrowseCoursesMenu(User& user, Cart& cart) {
+    DisplayCourseList(false);
+    std::vector<Course>& courses = GetCourseList();
 
     std::cout << "\nEnter course ID to view details (0 to go back): ";
-    int id = getValidInt(0, 9999);
+    int id = GetValidInt(0, 9999);
     if (id == 0) {
         return;
     }
@@ -106,7 +105,7 @@ void browseCoursesMenu(User& user, Cart& cart) {
         return;
     }
 
-    displayCourseDetail(*selected, false);
+    DisplayCourseDetail(*selected, false);
 
     bool alreadyOwned = false;
     for (const Course& owned : user.purchasedCourses) {
@@ -125,17 +124,17 @@ void browseCoursesMenu(User& user, Cart& cart) {
     std::cout << "2. Add to Wishlist\n";
     std::cout << "0. Go Back\n";
     std::cout << "Choice: ";
-    int action = getValidInt(0, 2);
+    int action = GetValidInt(0, 2);
 
     if (action == 1) {
-        cart.addItem(*selected);
+        cart.AddItem(*selected);
     } else if (action == 2) {
-        addToWishlist(user, *selected);
+        AddToWishlist(user, *selected);
     }
 }
 
-void myCourses(const User& user) {
-    printHeader("My Courses");
+void MyCourses(const User& user) {
+    PrintHeader("My Courses");
     if (user.purchasedCourses.empty()) {
         std::cout << "You have not purchased any courses yet.\n";
         return;
@@ -146,36 +145,36 @@ void myCourses(const User& user) {
     }
 }
 
-void instructorMenu(User& user) {
+void InstructorMenu(User& user) {
     bool loggedIn = true;
     while (loggedIn) {
-        printHeader("Instructor Menu - " + user.username);
+        PrintHeader("Instructor Menu - " + user.username);
         std::cout << "1. Add New Course\n";
         std::cout << "2. View All Courses\n";
         std::cout << "0. Logout\n";
         std::cout << "Choice: ";
-        int choice = getValidInt(0, 2);
+        int choice = GetValidInt(0, 2);
 
         if (choice == 1) {
-            instructorAddCourse(user);
+            InstructorAddCourse(user);
         } else if (choice == 2) {
-            displayCourseList(false);
+            DisplayCourseList(false);
         } else {
             loggedIn = false;
         }
     }
 }
 
-void instructorAddCourse(User& user) {
-    printHeader("Add New Course");
+void InstructorAddCourse(User& user) {
+    PrintHeader("Add New Course");
 
-    std::string name = getValidString("Course name: ");
-    std::string description = getValidString("Description: ");
-    std::string category = getValidString("Category: ");
-    std::string difficulty = getValidString("Difficulty (Beginner/Intermediate/Advanced): ");
+    std::string name = GetValidString("Course name: ");
+    std::string description = GetValidString("Description: ");
+    std::string category = GetValidString("Category: ");
+    std::string difficulty = GetValidString("Difficulty (Beginner/Intermediate/Advanced): ");
 
     std::cout << "Hours to complete: ";
-    int hours = getValidInt(1, 500);
+    int hours = GetValidInt(1, 500);
 
     std::cout << "Price ($): ";
     double price = 0.0;
@@ -183,9 +182,9 @@ void instructorAddCourse(User& user) {
     std::cin.ignore();
 
     std::cout << "Certification available? (1 = Yes, 0 = No): ";
-    int cert = getValidInt(0, 1);
+    int cert = GetValidInt(0, 1);
 
-    std::vector<Course>& courses = getCourseList();
+    std::vector<Course>& courses = GetCourseList();
     int newId = static_cast<int>(courses.size()) + 1;
 
     Course newCourse;
@@ -199,6 +198,6 @@ void instructorAddCourse(User& user) {
     newCourse.hasCertification = (cert == 1);
     newCourse.instructorName = user.username;
 
-    addCourse(newCourse);
+    AddCourse(newCourse);
     std::cout << "Course \"" << name << "\" added successfully.\n";
 }
