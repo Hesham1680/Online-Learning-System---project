@@ -1,3 +1,5 @@
+// Defines the Course struct and declares course-related functions.
+
 #ifndef COURSE_H
 #define COURSE_H
 

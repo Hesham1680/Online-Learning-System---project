@@ -1,3 +1,5 @@
+// Entry point. Manages the main menu, student menu, and instructor menu.
+
 #include <iostream>
 #include "User.h"
 #include "Course.h"

@@ -1,3 +1,5 @@
+// Implements input validation and console display helper functions.
+
 #include "Utils.h"
 #include <iostream>
 #include <limits>

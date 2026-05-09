@@ -1,3 +1,5 @@
+// Implements user signup, login, and session management.
+
 #include "User.h"
 #include "Utils.h"
 #include <iostream>

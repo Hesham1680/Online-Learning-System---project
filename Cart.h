@@ -1,3 +1,5 @@
+// Defines the Cart struct and declares checkout function.
+
 #ifndef CART_H
 #define CART_H
 

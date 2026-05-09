@@ -1,3 +1,5 @@
+// Implements course listing, course detail display, and course creation.
+
 #include "Course.h"
 #include "Utils.h"
 #include <iostream>
