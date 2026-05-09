@@ -1,22 +1,19 @@
-/* 
-* Copyright 2026 Cairo University - SCS253 - Online Learning System
-* Implements user signup, login, and session management.
-*/ 
+/* * Copyright 2026 Cairo University - SCS253 - Online Learning System
+   * Implements user signup, login, and session management. */ 
 
 #include "User.h"
 #include "Utils.h"
 #include <iostream>
-#include <algorithm>
 
-std::vector<User>& getUserList() {
+std::vector<User>& GetUserList() {
     static std::vector<User> users;
     return users;
 }
 
-bool signUp() {
-    printHeader("Sign Up");
-    std::string username = getValidString("Enter username: ");
-    std::vector<User>& users = getUserList();
+bool SignUp() {
+    PrintHeader("Sign Up");
+    std::string username = GetValidString("Enter username: ");
+    std::vector<User>& users = GetUserList();
 
     for (const User& u : users) {
         if (u.username == username) {
@@ -25,13 +22,13 @@ bool signUp() {
         }
     }
 
-    std::string password = getValidString("Enter password: ");
+    std::string password = GetValidString("Enter password: ");
 
     std::cout << "Select role:\n";
     std::cout << "1. Student\n";
     std::cout << "2. Instructor\n";
     std::cout << "Choice: ";
-    int roleChoice = getValidInt(1, 2);
+    int roleChoice = GetValidInt(1, 2);
 
     User newUser;
     newUser.username = username;
@@ -43,12 +40,12 @@ bool signUp() {
     return true;
 }
 
-User* login() {
-    printHeader("Login");
-    std::string username = getValidString("Enter username: ");
-    std::string password = getValidString("Enter password: ");
+User* Login() {
+    PrintHeader("Login");
+    std::string username = GetValidString("Enter username: ");
+    std::string password = GetValidString("Enter password: ");
 
-    std::vector<User>& users = getUserList();
+    std::vector<User>& users = GetUserList();
     for (User& u : users) {
         if (u.username == username && u.password == password) {
             std::cout << "Login successful. Welcome back, " << username << "!\n";
